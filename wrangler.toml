@@ -1,0 +1,19 @@
+name = "demongacha-auto-opener"
+main = "src/index.js"
+compatibility_date = "2026-11-01"
+
+# Runs every 30 minutes. Change to match the site's pack cooldown.
+[triggers]
+crons = ["*/30 * * * *"]
+
+[vars]
+MAX_OPENS_PER_RUN = "5"
+PACKS_PER_OPEN = "1"
+# Keep this identical to the browser you copied the cookies from.
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36"
+
+# Optional: store the last run summary. Create with `npx wrangler kv namespace create LOG`
+# then paste the id below and uncomment.
+# [[kv_namespaces]]
+# binding = "LOG"
+# id = "PASTE_KV_ID_HERE"
